@@ -7,7 +7,20 @@ public class Main {
         System.out.println("Subtraction: " + subtract(a, b));
         System.out.println("Multiplication: " + multiply(a, b));
         System.out.println("Division: " + divide(a, b));
+        System.out.println("Modulus: " + modulus(a, b));
+        System.out.println("Exponentiation: " + exponentiation(a, b));
+
     }
+
+    public static int exponentiation(int a, int b) {
+        return (int) Math.pow(a, b);
+    }
+
+
+    public static int modulus(int a, int b) {
+        return a % b;
+    }
+
 
     public static int add(int a, int b) {
         return a + b;
@@ -22,11 +35,12 @@ public class Main {
     }
 
     public static double divide(int a, int b) {
-        if (b != 0) {
+        try {
             return (double) a / b;
-        } else {
-            System.out.println("Division by zero is not allowed");
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Division by zero");
             return 0;
         }
     }
+
 } 
